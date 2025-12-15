@@ -19,14 +19,31 @@ const squadreCalcio = [
     { nome: "Lazio", punti: 0, falliSubiti: 0 }
 ];
 
+// creo un nuovo array di oggetti da popolare
+
+const squadreFalli = []
+
 
 // SYSTEM
 
+// creo un for per creare numeri random di falli e punti
+
 for (let index = 0; index < squadreCalcio.length; index++) {
+    squadreCalcio[index].punti = randomNumber(1, 100);
+    squadreCalcio[index].falliSubiti = randomNumber(1, 50);
+    console.log("Attuale squadra di calcio ", squadreCalcio[index]);
+    
+    // faccio push sul nuovo array per avere nomi squadre con i loro falli subiti
+
+    squadreFalli.push({
+        nome: squadreCalcio[index].nome,
+        falliSubiti: squadreCalcio[index].falliSubiti
+    });
     
     
 }
 
+console.log("Nuovo array squadreFalli:", squadreFalli);
 
 
 
